@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Working with youtube clone
+Create a .env.local file from given template with name dotenv and keep your youtube v3 api key there to start working with real youtube data with consuming api. This .env file will be read in this project as mentioned in NextJS docs. So refere to "how to read .env.local in NextJS", basically it is automatically loaded and can be read with "process.env"

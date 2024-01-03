@@ -1,0 +1,15 @@
+
+
+
+body {
+  background-color: $primary-color;
+  color: $theme-color;
+  margin: 0;
+  
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+
+}
