@@ -1,3 +1,4 @@
+import TopBar from '@/components/header'
 import Image from 'next/image'
 import styles from '/public/assets/css/page.module.min.css'
 import topics from '/src/api/topics.json'
@@ -19,26 +20,6 @@ export default function Home() {
 }
 
 
-function TopBar(){
-  return (
-    <nav className = "top-bar">
-      <div>
-        <Image
-          src = "/youtube-white-logo.png"
-          alt = "youtube-logo"
-          width = {0}
-          height = {0}
-          sizes = "100vh"
-          className = "logo"
-        />
-      </div>
-      <div className = "right-side">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className='icon'/>
-        <FontAwesomeIcon icon={faCircleUser} className='icon'/>
-      </div>
-    </nav>
-  );
-}
 
 function NavigationMenuAndTopics(){
 
