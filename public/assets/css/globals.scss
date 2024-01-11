@@ -1,5 +1,6 @@
 
-
+@import "font";
+@import "variables";
 
 body {
   background-color: $primary-color;
@@ -11,5 +12,4 @@ body {
 
 ::-webkit-scrollbar {
   display: none; /* for Chrome, Safari and Opera */
-
 }

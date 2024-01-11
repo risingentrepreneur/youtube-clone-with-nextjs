@@ -1,19 +1,17 @@
 import TopBar from '@/components/header'
 import Image from 'next/image'
 import styles from '/public/assets/css/page.module.min.css'
-import topics from '/src/api/topics.json'
+
 import youtubeFeedLocalJSON from '/src/api/youtubefeed.json'
 import channelsListLocalJSON from '/src/api/channelsList.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faCircleUser, faCompass } from "@fortawesome/free-regular-svg-icons";
 
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <TopBar />
-      <NavigationMenuAndTopics />
+      <TopBar showNavigationAndTopicMenu = { true } />
       <VideosList />
     </main>
   )
@@ -21,24 +19,6 @@ export default function Home() {
 
 
 
-function NavigationMenuAndTopics(){
-
-  function TopicList(){
-    return topics.map((topic, key) => {
-      const useClassName  = (topic == "All") ? "topic-tag active" : "topic-tag";
-      return <span key={key} className={ useClassName }>{ topic }</span>;
-    });
-  }
-  
-  return (
-    <div className = "navigation-menu-and-topics">
-      <div className='menu-icon'>
-        <FontAwesomeIcon icon={faCompass} className='icon'/>
-      </div>
-      <TopicList />
-    </div>
-  );
-}
 
 async function VideosList(){
 

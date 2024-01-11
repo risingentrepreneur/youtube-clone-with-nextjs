@@ -1,16 +1,45 @@
 "use client"
 import Image from 'next/image'
+import topics from '/src/api/topics.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faMagnifyingGlass, faMicrophone } from "@fortawesome/free-solid-svg-icons";
-import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
+import { faCircleUser, faCompass } from "@fortawesome/free-regular-svg-icons";
+import { useState, useEffect } from "react";
 
 
-export default function TopBar(){
+export default function TopBar(props){
 
-    let [showSearch, setShowSearch]     = useState(false);
+    const [showSearch, setShowSearch]     = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
-    return !showSearch ? <ShowSearchBar setShowSearch = {setShowSearch} /> : <HideSearchBar setShowSearch = {setShowSearch} />; 
+    
+
+
+    function handleScroll(){
+
+        const currentScrollPos = window.scrollY;
+
+        if(currentScrollPos > 50 && !showSearch && currentScrollPos > prevScrollPos){
+            setVisible(false);
+        }else{
+            setVisible(true);
+        }
+
+        setPrevScrollPos(currentScrollPos);
+    }
+    
+    useEffect( () => {
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+
+    });
+
+    return <div id='navbar' className={`navbar ${visible ? 'visible' : 'hidden'}`}>
+            {!showSearch ? <ShowSearchBar setShowSearch = {setShowSearch} /> : <HideSearchBar setShowSearch = {setShowSearch} />}
+            {props.showNavigationAndTopicMenu && <NavigationMenuAndTopics />}
+        </div>;
 }
 
 function ShowSearchBar({ setShowSearch }){
@@ -48,5 +77,26 @@ function HideSearchBar({ setShowSearch }){
                 </div>
             </div>
         </nav>
+    );
+}
+
+
+
+function NavigationMenuAndTopics(){
+
+    function TopicList(){
+      return topics.map((topic, key) => {
+        const useClassName  = (topic == "All") ? "topic-tag active" : "topic-tag";
+        return <span key={key} className={ useClassName }>{ topic }</span>;
+      });
+    }
+    
+    return (
+      <div className = "navigation-menu-and-topics">
+        <div className='menu-icon'>
+          <FontAwesomeIcon icon={faCompass} className='icon'/>
+        </div>
+        <TopicList />
+      </div>
     );
 }
