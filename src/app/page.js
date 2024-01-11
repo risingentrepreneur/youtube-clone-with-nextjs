@@ -6,6 +6,7 @@ import youtubeFeedLocalJSON from '/src/api/youtubefeed.json'
 import channelsListLocalJSON from '/src/api/channelsList.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -33,7 +34,8 @@ async function VideosList(){
     });
 
     return (
-        <div key={ video.id } className='video-card'>
+        <Link href={`video/${video.id}`} key={video.id}>
+          <div className='video-card'>
             <div className='image' style={{ backgroundImage: `url( ${ video.snippet.thumbnails.high.url } )` }}>
               <div className='duration'>{ convertDurationStringToHHMMSS(video.contentDetails.duration) }</div>
             </div>
@@ -48,6 +50,7 @@ async function VideosList(){
               <div className='video-menu'><FontAwesomeIcon icon={faEllipsisVertical} className='icon' /></div>
             </div>
         </div>
+        </Link>
       );
   });
 }
