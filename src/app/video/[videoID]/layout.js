@@ -1,5 +1,4 @@
 import TopBar from '@/components/header'
-import Image from 'next/image'
 import styles from '/public/assets/css/page.module.min.css'
 
 import { Inter } from 'next/font/google'

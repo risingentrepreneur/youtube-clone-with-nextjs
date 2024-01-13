@@ -233,3 +233,20 @@
     height: 100%;
   }
 }
+
+
+.video-details {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 12px;
+    opacity: 0.7;
+    word-wrap: break-word;
+  }
+}

@@ -38,3 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Working with youtube clone
 Create a .env.local file from given template with name dotenv and keep your youtube v3 api key there to start working with real youtube data with consuming api. This .env file will be read in this project as mentioned in NextJS docs. So refere to "how to read .env.local in NextJS", basically it is automatically loaded and can be read with "process.env"
+
+
+## Dependencies for Youtube Player Iframe API 
+Tutorial at the link https://www.freecodecamp.org/news/use-the-youtube-iframe-api-in-react/ and the code sandbox link is https://codesandbox.io/p/sandbox/react-youtube-demo-f6l29?file=%2Fsrc%2FApp.js

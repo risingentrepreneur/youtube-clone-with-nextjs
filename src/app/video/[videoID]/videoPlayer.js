@@ -8,11 +8,11 @@ export default function Content() {
     
 
     const checkElapsedTime = (e) => {
-      console.log(e.target.playerInfo.playerState);
+      //console.log(e.target.playerInfo.playerState);
       const duration = e.target.getDuration();
       const currentTime = e.target.getCurrentTime();
       if (currentTime / duration > 0.95) {
-        setModalIsOpen(true);
+        //setModalIsOpen(true);
       }
     };
   
