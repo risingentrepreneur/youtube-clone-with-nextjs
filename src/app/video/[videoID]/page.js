@@ -17,7 +17,7 @@ async function PrintVideoDetails({ videoID }){
   videoDetails          = videoDetails.items[0].snippet;
 
   return (
-    <div className="video-details">
+    <div className="video-content">
       <h4 className="title">{ videoDetails.title }</h4>
       <div className="description">{ videoDetails.description }</div>
     </div>

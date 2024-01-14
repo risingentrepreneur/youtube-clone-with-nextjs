@@ -49,7 +49,7 @@ async function VideosList(){
               </div>
               <div className='video-menu'><FontAwesomeIcon icon={faEllipsisVertical} className='icon' /></div>
             </div>
-        </div>
+          </div>
         </Link>
       );
   });
