@@ -7,6 +7,8 @@ import { faCircleUser, faCompass } from "@fortawesome/free-regular-svg-icons";
 import { useState, useEffect } from "react";
 import Link from 'next/link';
 
+import '/public/assets/css/header.min.css';
+
 
 export default function TopBar(props){
 

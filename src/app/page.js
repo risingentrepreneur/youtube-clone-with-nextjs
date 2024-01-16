@@ -1,6 +1,6 @@
 import TopBar from '@/_components/header'
 import VideosList from '@/_components/videosList'
-import styles from '/public/assets/css/page.module.min.css'
+import styles from '/public/assets/css/home.min.css'
 
 
 export default function Home() {

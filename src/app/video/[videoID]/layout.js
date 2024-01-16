@@ -1,5 +1,5 @@
 import TopBar from '@/_components/header'
-import styles from '/public/assets/css/page.module.min.css'
+import styles from '/public/assets/css/home.min.css'
 
 import { Inter } from 'next/font/google'
 import '/public/assets/css/globals.min.css'
