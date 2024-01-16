@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <TopBar showNavigationAndTopicMenu = { true } />
-      <VideosList />
+      <div className='video-list'> <VideosList /> `</div>
     </main>
   )
 }

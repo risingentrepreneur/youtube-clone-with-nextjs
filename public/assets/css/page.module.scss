@@ -148,81 +148,85 @@
   }
 }
 
-.video-card {
+.video-list {
   width: 100%;
-  margin-bottom: 14px;
 
-  .image {
+  .video-card {
     width: 100%;
-    aspect-ratio: 16/9;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    position: relative;
-
-    .duration {
-      background-color: $secondary-color;
-      color: $theme-color;
-      font-size: 12px;
-      padding: 5px 8px;
-      border-radius: 8px;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-    }
-  }
-
-  .video-details {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    .author-dp {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
+    margin-bottom: 14px;
+  
+    .image {
+      width: 100%;
+      aspect-ratio: 16/9;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-
-      margin: 12px 10px;
-      margin-left: 16px;
-      content: "";
-    }
-
-    .details {
-      margin: 12px 10px;
-      width: calc(100% - 100px);
-
-      .title {
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      .other {  
-        font-size: 12px;
-        font-weight: 200;
-        color: #bebebe;
-        margin-top: 5px;
-      }
-
-      
-    }
-
-    .video-menu {
-      width: 10px;
-      justify-content: center;
-      margin-right: 8px;
   
-      .icon {
-        height: 18px;
+      position: relative;
+  
+      .duration {
+        background-color: $secondary-color;
+        color: $theme-color;
+        font-size: 12px;
+        padding: 5px 8px;
+        border-radius: 8px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+  
+    .video-details {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  
+      .author-dp {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+  
+        margin: 12px 10px;
+        margin-left: 16px;
+        content: "";
+      }
+  
+      .details {
+        margin: 12px 10px;
+        width: calc(100% - 100px);
+  
+        .title {
+          font-size: 14px;
+          font-weight: 500;
+        }
+  
+        .other {  
+          font-size: 12px;
+          font-weight: 200;
+          color: #bebebe;
+          margin-top: 5px;
+        }
+  
+        
+      }
+  
+      .video-menu {
+        width: 10px;
+        justify-content: center;
+        margin-right: 8px;
+    
+        .icon {
+          height: 18px;
+        }
       }
     }
   }
+  
 }
-
 
 .youtube-player {
   position: relative;
