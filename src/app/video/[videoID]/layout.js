@@ -1,4 +1,4 @@
-import TopBar from '@/components/header'
+import TopBar from '@/_components/header'
 import styles from '/public/assets/css/page.module.min.css'
 
 import { Inter } from 'next/font/google'
@@ -7,7 +7,7 @@ import '/public/assets/css/globals.min.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Youtube Clone Video',
+  title: 'Youtube Video Player',
   description: 'Created by Shivam Shukla',
 }
 
