@@ -1,8 +1,10 @@
 "use client"
 import { useParams } from 'next/navigation';
 import YouTube from "react-youtube";
+import { parseHTMLtags } from '@/_utils/utils';
+import DOMPurify from "dompurify";
 
-export default function VideoPlayer() {
+export function VideoPlayer() {
 
     const { videoID } = useParams();
     
@@ -33,6 +35,20 @@ export default function VideoPlayer() {
         />
       </div>
     );
+}
+
+
+
+export function Details( { videoDetails } ){
+
+  const parsedDescription       = parseHTMLtags(videoDetails.description);
+  const sanitizedDescription    = DOMPurify.sanitize(parsedDescription);
+  return (
+    <div className="video-description">
+      <h4 className="title">{ videoDetails.title }</h4>
+      <div className="description" dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
+    </div>
+  );
 }
   
   
