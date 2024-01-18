@@ -2,22 +2,29 @@ import {VideoPlayer, Details} from "./videoDetails";
 import '/public/assets/css/videoPage.min.css'
 import { getVideoDetails } from "@/api/fetch";
 
-export default function Video({ params })  {
 
-    return (
-      <>
-        <VideoPlayer />
-        <PrintVideoDetails videoID={params.videoID}/>
-      </>
-    )
+export async function generateMetadata({ params }) {
+  // read route params
+
+  let videoID           = params.videoID;
+  let videoDetails      = await getVideoDetails(videoID);
+  videoDetails          = videoDetails.items[0].snippet;
+  return {
+    title: videoDetails.title,
+    description: videoDetails.description,
+  }
 }
 
-async function PrintVideoDetails({ videoID }){
+export default async function Video({ params })  {
 
+  let videoID           = params.videoID;
   let videoDetails      = await getVideoDetails(videoID);
   videoDetails          = videoDetails.items[0].snippet;
 
   return (
-    <Details videoDetails={ videoDetails } />
-  );
+    <div>
+      <VideoPlayer />
+      <Details videoDetails={ videoDetails } />
+    </div>
+  )
 }

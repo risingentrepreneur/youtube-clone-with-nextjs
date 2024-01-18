@@ -44,6 +44,7 @@ export function Details( { videoDetails } ){
   const parsedDescription       = parseHTMLtags(videoDetails.description);
   const sanitizedDescription    = DOMPurify.sanitize(parsedDescription);
   return (
+    
     <div className="video-description">
       <h4 className="title">{ videoDetails.title }</h4>
       <div className="description" dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
