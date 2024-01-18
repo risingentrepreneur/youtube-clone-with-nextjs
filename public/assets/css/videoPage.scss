@@ -33,9 +33,53 @@
   }
 
   .description {
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.7;
     word-wrap: break-word;
     white-space: pre-wrap;
+    padding-top: 8px;
+    overflow: hidden;
+
+    &.hidden {
+      height: 0;
+    }
+
+    &.show {
+      height: auto;
+    }
+  }
+
+  .statistics {
+    font-size: 12px;
+    font-weight: 300;
+
+    .show-more-btn {
+      font-weight: 400;
+      margin-left: 10px;
+      display: inline-block;
+      text-decoration: underline;
+
+      &.hidden {
+        display: none;
+      }
+
+      &.show {
+        display: inline-block;
+      }
+    }
+  }
+
+  .show-less-btn {
+    font-weight: 400;
+    margin-top: 10px;
+    text-decoration: underline;
+
+    &.hidden {
+      display: none;
+    }
+
+    &.show {
+      display: block;
+    }
   }
 }

@@ -1,8 +1,9 @@
 "use client"
 import { useParams } from 'next/navigation';
 import YouTube from "react-youtube";
-import { parseHTMLtags } from '@/_utils/utils';
+import { durationToHHMMSS, parseHTMLtags, timePassedFromISO, viewsInMK } from '@/_utils/utils';
 import DOMPurify from "dompurify";
+import { useEffect, useState } from 'react';
 
 export function VideoPlayer() {
 
@@ -40,16 +41,31 @@ export function VideoPlayer() {
 
 
 export function Details( { videoDetails } ){
+    const [showDescription, setShowDescription]           = useState(false);
 
-  const parsedDescription       = parseHTMLtags(videoDetails.description);
-  const sanitizedDescription    = DOMPurify.sanitize(parsedDescription);
-  return (
-    
-    <div className="video-description">
-      <h4 className="title">{ videoDetails.title }</h4>
-      <div className="description" dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
-    </div>
-  );
+    const toogleDescriptionView = () => {
+        setShowDescription(!showDescription);
+    };
+
+    const snippet                   = videoDetails.snippet;
+    const statistics                = videoDetails.statistics;
+    const parsedDescription         = parseHTMLtags(snippet.description);
+    const sanitizedDescription      = DOMPurify.sanitize(parsedDescription);
+
+    return (
+        
+        <div className="video-description">
+            <h4 className="title">{ snippet.title }</h4>
+            <div className='statistics'>
+                { viewsInMK(statistics.viewCount) } views ॰&nbsp;
+                { viewsInMK(statistics.commentCount) } comments ॰&nbsp; 
+                { timePassedFromISO(snippet.publishedAt) }
+                <div className={!showDescription ? "show-more-btn show" : "show-more-btn hidden"} onClick={toogleDescriptionView}>...more</div>
+            </div>
+            <div className={showDescription ? "description show" : "description hidden"} dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
+            <div className={showDescription ? "show-less-btn show" : "show-less-btn hidden"} onClick={toogleDescriptionView}>...less</div>
+        </div>
+    );
 }
   
   

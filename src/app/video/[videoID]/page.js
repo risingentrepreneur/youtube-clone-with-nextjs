@@ -19,7 +19,7 @@ export default async function Video({ params })  {
 
   let videoID           = params.videoID;
   let videoDetails      = await getVideoDetails(videoID);
-  videoDetails          = videoDetails.items[0].snippet;
+  videoDetails          = videoDetails.items[0];
 
   return (
     <div>
