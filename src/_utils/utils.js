@@ -67,4 +67,14 @@ export function timePassedFromISO(isoString) {
     return `${mainValue} ${mainUnit}${mainValue > 1 ? "s" : ""} ago`;
 }
   
-  
+export function parseHTMLtags(string){
+    const Rexp = /((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g;
+ 
+    // Replace the RegExp content by HTML element
+    //return string.replace(Rexp, `<a href='$1'>$1</a>`);
+
+    return string.replace(/(https?:\/\/[^\s]+)/g, (url) => {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
+
+}

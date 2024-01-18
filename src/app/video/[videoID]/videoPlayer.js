@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation';
 import YouTube from "react-youtube";
 
-export default function Content() {
+export default function VideoPlayer() {
 
     const { videoID } = useParams();
     
@@ -24,17 +24,13 @@ export default function Content() {
     
   
     return (
-      <div>
-        <div>
-          <div>
-            <YouTube
-              videoId={videoID}
-              className='youtube-player'
-              onStateChange={(e) => checkElapsedTime(e)}
-              opts={opts}
-            />
-          </div>
-        </div>
+      <div className='youtube-player'>
+        <YouTube
+          videoId={videoID}
+          className='iframe-player'
+          onStateChange={(e) => checkElapsedTime(e)}
+          opts={opts}
+        />
       </div>
     );
 }
