@@ -6,9 +6,9 @@ import { viewsInMK, durationToHHMMSS, timePassedFromISO } from '@/_utils/utils'
 import Link from 'next/link'
 import '/public/assets/css/videosList.min.css';
 
-export default async function VideosList(){
+export default async function VideosList(props){
 
-    let videosList    = await getVideosList();
+    let videosList    = await getVideosList(props.videoCategoryId, props.maxResults);
     videosList        = videosList ? videosList.items : youtubeFeedLocalJSON.items;
   
     return (

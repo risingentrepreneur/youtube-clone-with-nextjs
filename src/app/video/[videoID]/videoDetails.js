@@ -68,4 +68,18 @@ export function Details( { videoDetails } ){
     );
 }
   
+export function ChannelDetails( { channelDetails } ){
+    return (
+        <div className='channel-details'>
+            <div className='left'>
+                <div className='channel-dp' style={{ backgroundImage: `url( ${ JSON.stringify(channelDetails.snippet.thumbnails.medium.url) }  )` }}></div>
+                <div className='title'> { channelDetails.snippet.title } </div>
+                <div className='subscribers-count'> { viewsInMK(channelDetails.statistics.subscriberCount) } </div>
+            </div>
+            <div className='subscribe-btn'>
+                Subscribe
+            </div>
+        </div>
+    );
+}
   

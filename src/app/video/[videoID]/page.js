@@ -1,6 +1,7 @@
-import {VideoPlayer, Details} from "./videoDetails";
+import {VideoPlayer, Details, ChannelDetails} from "./videoDetails";
 import '/public/assets/css/videoPage.min.css'
-import { getVideoDetails } from "@/api/fetch";
+import { getVideoDetails, getChannelDetails } from "@/api/fetch";
+import VideosList from '@/_components/videosList'
 
 
 export async function generateMetadata({ params }) {
@@ -20,11 +21,15 @@ export default async function Video({ params })  {
   let videoID           = params.videoID;
   let videoDetails      = await getVideoDetails(videoID);
   videoDetails          = videoDetails.items[0];
+  let channelDetails    = await getChannelDetails(videoDetails.snippet.channelId);
+  channelDetails        = channelDetails.items[0];
 
   return (
     <div>
       <VideoPlayer />
-      <Details videoDetails={ videoDetails } />
+      <Details videoDetails = { videoDetails } />
+      <ChannelDetails channelDetails = { channelDetails } ></ChannelDetails>
+      <div className='video-list'> <VideosList videoCategoryId = { videoDetails.snippet.tags.categoryId } maxResults = "20" /> </div>
     </div>
   )
 }
