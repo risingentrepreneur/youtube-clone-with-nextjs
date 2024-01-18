@@ -1,4 +1,4 @@
-import {VideoPlayer, Details, ChannelDetails} from "./videoDetails";
+import {VideoPlayer, Details, ChannelDetails, LikesDislikes} from "./videoDetails";
 import '/public/assets/css/videoPage.min.css'
 import { getVideoDetails, getChannelDetails } from "@/api/fetch";
 import VideosList from '@/_components/videosList'
@@ -28,7 +28,8 @@ export default async function Video({ params })  {
     <div>
       <VideoPlayer />
       <Details videoDetails = { videoDetails } />
-      <ChannelDetails channelDetails = { channelDetails } ></ChannelDetails>
+      <ChannelDetails channelDetails = { channelDetails } />
+      <LikesDislikes videoDetails = { videoDetails } />
       <div className='video-list'> <VideosList videoCategoryId = { videoDetails.snippet.tags.categoryId } maxResults = "20" /> </div>
     </div>
   )

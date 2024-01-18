@@ -4,6 +4,9 @@ import YouTube from "react-youtube";
 import { durationToHHMMSS, parseHTMLtags, timePassedFromISO, viewsInMK } from '@/_utils/utils';
 import DOMPurify from "dompurify";
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShare, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp, faThumbsDown, faFlag } from "@fortawesome/free-regular-svg-icons";
 
 export function VideoPlayer() {
 
@@ -79,6 +82,33 @@ export function ChannelDetails( { channelDetails } ){
             <div className='subscribe-btn'>
                 Subscribe
             </div>
+        </div>
+    );
+}
+
+export function LikesDislikes( { videoDetails } ) {
+
+    const statistics                = videoDetails.statistics;
+
+    return (
+        <div className='more-details-container'>
+        <div className='more-details'>
+            <div className='tag'>
+                <FontAwesomeIcon icon={faThumbsUp} className='icon margin-right' /> 
+                { viewsInMK(statistics.likeCount) } &nbsp; | &nbsp;
+                <FontAwesomeIcon icon={faThumbsDown} className='icon flipped'  />
+            </div>
+            <div className='tag'>
+                <FontAwesomeIcon icon={faShare} className='icon margin-right' /> Share
+            </div>
+            <div className='tag'>
+                <FontAwesomeIcon icon={faPlus} className='icon margin-right' /> Save
+            </div>
+            <div className='tag'>
+                <FontAwesomeIcon icon={faFlag} className='icon margin-right' /> Report
+            </div>
+            <div className='tag'>sdfdsfdsfsdsfdsfdsfgjkfgasdkhjfg</div>
+        </div>
         </div>
     );
 }

@@ -88,7 +88,6 @@
   width: calc(100% - 30px);
   display: flex;
   padding: 12px 15px;
-  margin-bottom: 40px;
   align-items: center;
   justify-content: space-between;
 
@@ -130,5 +129,46 @@
     background-color: $theme-color;
     color: $primary-color;
     border-radius: 20px;
+  }
+}
+
+.more-details-container {
+  width: 100%;
+  overflow-x: scroll;
+
+  .more-details {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    scrollbar-width: none;  /* Firefox */  
+    border-bottom: 1px solid $border-color;
+  
+    .tag {
+      display: flex;
+      width: 100%;
+      background-color: $secondary-color;
+      padding: 8px 15px;
+      color: $font-light;
+      border-radius: 20px;
+      font-size: 14px;
+      vertical-align: middle;
+      margin-right: 10px;
+      text-wrap: nowrap;
+  
+      .icon {
+        height: 18px;
+        vertical-align: middle;
+  
+        &.margin-right {
+          margin-right: 10px;
+        }
+  
+        &.flipped {
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+        }
+      }
+    }
   }
 }
