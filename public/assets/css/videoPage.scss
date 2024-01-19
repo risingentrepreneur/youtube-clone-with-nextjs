@@ -1,5 +1,10 @@
 @import "variables";
 
+
+.video-page {
+  width: 100%;
+}
+
 .youtube-player {
     position: sticky;
     top: 0;
@@ -132,43 +137,69 @@
   }
 }
 
-.more-details-container {
-  width: 100%;
-  overflow-x: scroll;
 
-  .more-details {
+.more-details {
+  width: calc(100% - 30px);
+  display: flex;
+  flex-direction: row;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  scrollbar-width: none;  /* Firefox */  
+  border-bottom: 1px solid $border-color;
+  overflow: scroll;
+  white-space: nowrap;
+  position: relative;
+
+  .tag {
     display: flex;
-    flex-direction: row;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    scrollbar-width: none;  /* Firefox */  
-    border-bottom: 1px solid $border-color;
-  
-    .tag {
-      display: flex;
-      width: 100%;
-      background-color: $secondary-color;
-      padding: 8px 15px;
-      color: $font-light;
-      border-radius: 20px;
-      font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $secondary-color;
+    padding: 8px 15px;
+    color: $font-light;
+    border-radius: 20px;
+    font-size: 14px;
+    vertical-align: middle;
+    margin-right: 10px;
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .icon {
+      height: 18px;
       vertical-align: middle;
-      margin-right: 10px;
-      text-wrap: nowrap;
-  
-      .icon {
-        height: 18px;
-        vertical-align: middle;
-  
-        &.margin-right {
-          margin-right: 10px;
-        }
-  
-        &.flipped {
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-        }
+
+      &.margin-right {
+        margin-right: 10px;
       }
+
+      &.margin-left-20 {
+        margin-left: 20px;
+      }
+
+      &.padding-right {
+        padding-right: 10px;
+      }
+
+      &.border-right {
+        border-right: 1px solid $border-color;
+
+      }
+
+      &.flipped {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
+
+    .divider {
+      opacity: 0.5;
+      font-size: 18px;
+      font-weight: normal;
     }
   }
 }

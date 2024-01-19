@@ -91,12 +91,11 @@ export function LikesDislikes( { videoDetails } ) {
     const statistics                = videoDetails.statistics;
 
     return (
-        <div className='more-details-container'>
         <div className='more-details'>
             <div className='tag'>
                 <FontAwesomeIcon icon={faThumbsUp} className='icon margin-right' /> 
-                { viewsInMK(statistics.likeCount) } &nbsp; | &nbsp;
-                <FontAwesomeIcon icon={faThumbsDown} className='icon flipped'  />
+                { viewsInMK(statistics.likeCount) }
+                <FontAwesomeIcon icon={faThumbsDown} className='icon flipped padding-right margin-left-20 border-right'  />
             </div>
             <div className='tag'>
                 <FontAwesomeIcon icon={faShare} className='icon margin-right' /> Share
@@ -107,8 +106,6 @@ export function LikesDislikes( { videoDetails } ) {
             <div className='tag'>
                 <FontAwesomeIcon icon={faFlag} className='icon margin-right' /> Report
             </div>
-            <div className='tag'>sdfdsfdsfsdsfdsfdsfgjkfgasdkhjfg</div>
-        </div>
         </div>
     );
 }

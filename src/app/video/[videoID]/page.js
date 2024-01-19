@@ -25,7 +25,7 @@ export default async function Video({ params })  {
   channelDetails        = channelDetails.items[0];
 
   return (
-    <div>
+    <div className="video-page">
       <VideoPlayer />
       <Details videoDetails = { videoDetails } />
       <ChannelDetails channelDetails = { channelDetails } />
