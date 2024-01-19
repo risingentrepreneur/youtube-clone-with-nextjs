@@ -21,7 +21,7 @@ export default async function VideosList(props){
                     });
                 
                     return (
-                        <Link href={`video/${video.id}`} key={video.id}>
+                        <Link href={`/video/${video.id}`} key={video.id}>
                           <div className='video-card'>
                             <div className='image' style={{ backgroundImage: `url( ${ video.snippet.thumbnails.high.url } )` }}>
                               <div className='duration'>{ durationToHHMMSS(video.contentDetails.duration) }</div>
