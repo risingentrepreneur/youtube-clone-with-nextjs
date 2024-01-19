@@ -35,8 +35,8 @@
         align-items: center;
     
         .author-dp {
-          width: 45px;
-          height: 45px;
+          min-width: 45px;
+          min-height: 45px;
           border-radius: 50%;
           background-repeat: no-repeat;
           background-position: center;
@@ -49,11 +49,24 @@
     
         .details {
           margin: 12px 10px;
-          width: calc(100% - 100px);
+          margin-left: 8px;
+          width: 100%;
     
           .title {
+            width: calc(100% - 20px);
             font-size: 14px;
             font-weight: 500;
+            line-height: 1.5;
+            -webkit-line-clamp: 2; 
+            max-height: 3em;
+            overflow: hidden;
+            text-overflow: "..."; 
+            display: -webkit-box;
+            word-break: break-all;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+            box-orient: vertical;
           }
     
           .other {  
@@ -61,6 +74,18 @@
             font-weight: 200;
             color: #bebebe;
             margin-top: 5px;
+
+            .divider {
+              display: inline-block;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: #bebebe;
+              content: "";
+              margin: 0px 8px;
+              margin-bottom: 2px;
+              vertical-align: middle;
+            }
           }
     
           

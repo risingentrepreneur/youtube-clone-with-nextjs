@@ -31,7 +31,9 @@ export default async function VideosList(props){
                               <div className='details'>
                                 <div className='title'>{ video.snippet.title }</div>
                                 <div className='other'>
-                                  { video.snippet.channelTitle } &nbsp;॰&nbsp; { viewsInMK(video.statistics.viewCount) } views &nbsp;॰&nbsp; { timePassedFromISO(video.snippet.publishedAt) }
+                                  { video.snippet.channelTitle }<div className='divider'></div> 
+                                  { viewsInMK(video.statistics.viewCount) } views<div className='divider'></div> 
+                                  { timePassedFromISO(video.snippet.publishedAt) }
                                 </div>
                               </div>
                               <div className='video-menu'><FontAwesomeIcon icon={faEllipsisVertical} className='icon' /></div>

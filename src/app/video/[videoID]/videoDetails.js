@@ -60,8 +60,8 @@ export function Details( { videoDetails } ){
         <div className="video-description">
             <h4 className="title">{ snippet.title }</h4>
             <div className='statistics'>
-                { viewsInMK(statistics.viewCount) } views ॰&nbsp;
-                { viewsInMK(statistics.commentCount) } comments ॰&nbsp; 
+                { viewsInMK(statistics.viewCount) } views <div className='divider'></div>
+                { viewsInMK(statistics.commentCount) } comments <div className='divider'></div>
                 { timePassedFromISO(snippet.publishedAt) }
                 <div className={!showDescription ? "show-more-btn show" : "show-more-btn hidden"} onClick={toogleDescriptionView}>...more</div>
             </div>
