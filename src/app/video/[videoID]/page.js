@@ -30,7 +30,7 @@ export default async function Video({ params })  {
       <Details videoDetails = { videoDetails } />
       <ChannelDetails channelDetails = { channelDetails } />
       <LikesDislikes videoDetails = { videoDetails } />
-      <div className='video-list'> <VideosList videoCategoryId = { videoDetails.snippet.tags.categoryId } maxResults = "20" /> </div>
+      <div className='video-list'> <VideosList videoCategoryId = { videoDetails.snippet.categoryId } maxResults = "20" /> </div>
     </div>
   )
 }
