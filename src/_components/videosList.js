@@ -8,39 +8,43 @@ import '/public/assets/css/videosList.min.css';
 
 export default async function VideosList(props){
 
-    let videosList    = await getVideosList(props.videoCategoryId, props.maxResults);
-    videosList        = videosList ? videosList.items : youtubeFeedLocalJSON.items;
+    let excludeVideoId    = props.excludeVideoId;
+    let videosList        = await getVideosList(props.videoCategoryId, props.maxResults);
+    videosList            = videosList ? videosList.items : youtubeFeedLocalJSON.items;
   
     return (
         <div className="videos-list"> {
                 videosList.map(async (video) => {
   
-                    let channelDetails  = await getChannelDetails(video.snippet.channelId);
-                    channelDetails      = channelDetails ? channelDetails.items[0] : channelsListLocalJSON.items.find((channel) => {
-                      return channel.id === video.snippet.channelId;
-                    });
-                
-                    return (
-                        <Link href={`/video/${video.id}`} key={video.id}>
-                          <div className='video-card'>
-                            <div className='image' style={{ backgroundImage: `url( ${ video.snippet.thumbnails.high.url } )` }}>
-                              <div className='duration'>{ durationToHHMMSS(video.contentDetails.duration) }</div>
-                            </div>
-                            <div className='video-details'>
-                              <div className='author-dp' style={{ backgroundImage: `url( ${ JSON.stringify(channelDetails.snippet.thumbnails.medium.url) }  )` }}></div>
-                              <div className='details'>
-                                <div className='title'>{ video.snippet.title }</div>
-                                <div className='other'>
-                                  { video.snippet.channelTitle }<div className='divider'></div> 
-                                  { viewsInMK(video.statistics.viewCount) } views<div className='divider'></div> 
-                                  { timePassedFromISO(video.snippet.publishedAt) }
-                                </div>
+                    if (video.id != excludeVideoId){
+                      
+                      let channelDetails  = await getChannelDetails(video.snippet.channelId);
+                      channelDetails      = channelDetails ? channelDetails.items[0] : channelsListLocalJSON.items.find((channel) => {
+                        return channel.id === video.snippet.channelId;
+                      });
+                  
+                      return (
+                          <Link href={`/video/${video.id}`} key={video.id}>
+                            <div className='video-card'>
+                              <div className='image' style={{ backgroundImage: `url( ${ video.snippet.thumbnails.high.url } )` }}>
+                                <div className='duration'>{ durationToHHMMSS(video.contentDetails.duration) }</div>
                               </div>
-                              <div className='video-menu'><FontAwesomeIcon icon={faEllipsisVertical} className='icon' /></div>
+                              <div className='video-details'>
+                                <div className='author-dp' style={{ backgroundImage: `url( ${ JSON.stringify(channelDetails.snippet.thumbnails.medium.url) }  )` }}></div>
+                                <div className='details'>
+                                  <div className='title'>{ video.snippet.title }</div>
+                                  <div className='other'>
+                                    { video.snippet.channelTitle }<div className='divider'></div> 
+                                    { viewsInMK(video.statistics.viewCount) } views<div className='divider'></div> 
+                                    { timePassedFromISO(video.snippet.publishedAt) }
+                                  </div>
+                                </div>
+                                <div className='video-menu'><FontAwesomeIcon icon={faEllipsisVertical} className='icon' /></div>
+                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      );
+                          </Link>
+                        );
+                    }
                   })
             } </div>
     );
