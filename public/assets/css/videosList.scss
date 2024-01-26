@@ -1,11 +1,24 @@
 @import "variables";
 
-.video-list {
+.videos-list {
     width: 100%;
-  
+
+    @media only screen and (min-width: 767px) {
+      width: calc(100% - 250px);
+      margin-left: 250px;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
     .video-card {
       width: 100%;
       margin-bottom: 14px;
+
+      @media only screen and (min-width: 767px) {
+        width: 32%;
+      }
     
       .image {
         width: 100%;
@@ -15,6 +28,10 @@
         background-size: cover;
     
         position: relative;
+
+        @media only screen and (min-width: 767px) {
+          border-radius: 16px;
+        }
     
         .duration {
           background-color: $secondary-color;

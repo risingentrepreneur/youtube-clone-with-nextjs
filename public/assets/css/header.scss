@@ -19,6 +19,10 @@
 
   &.hidden {
     transform: translateY(-100%);
+
+    @media only screen and (min-width: 767px) {
+      transform: translateY(0%);
+    }
   }
 
   //top bar
@@ -109,6 +113,10 @@
 
     border-bottom: 1px solid $border-color;
 
+    @media only screen and (min-width: 767px) {
+      margin-left: 220px;
+    }
+
     .menu-icon {
       background-color: $secondary-color;
       padding: 6px 12px;
@@ -117,6 +125,10 @@
       .icon {
         vertical-align: middle;
         height: 20px;
+      }
+
+      @media only screen and (min-width: 767px) {
+        display: none;
       }
 
     }
@@ -154,6 +166,15 @@
   top: 0;
 
   display: flex;
+  scroll-behavior: smooth;
+
+  @media only screen and (min-width: 767px) {
+    left: 0;
+    width: 220px;
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+  }
+
 
   &.visible {
     left: 0;
@@ -163,6 +184,11 @@
   &.hidden {
     left: -100%;
     transition-duration: 300ms;
+
+    @media only screen and (min-width: 767px) {
+      left: 0;
+    }
+
   }
 
   .side-navigation-items {
@@ -170,11 +196,19 @@
     background-color: $primary-color;
     overflow-y: scroll;
     
+    @media only screen and (min-width: 767px) {
+      width: 100%;
+    }
+
     .logo {
       height: 20px;
       width: auto;
       margin: 15px 25px;
       margin-top: 30px;
+
+      @media only screen and (min-width: 767px) {
+        display: none;
+      }
     }
   
     .nav-items-group {
@@ -182,7 +216,7 @@
       padding: 15px 15px;
   
       h5 {
-        font-size: 24px;
+        font-size: 16px;
         margin: 0;
         margin-bottom: 12px;
       }
@@ -195,12 +229,14 @@
           height: 20px;
           color: $font-light;
           vertical-align: middle;
+          opacity: 0.6;
         }
   
         label {
-          font-size: 18px;
+          font-size: 14px;
           vertical-align: middle;
           margin-left: 10px;
+          opacity: 0.8;
         }
       }
     }
@@ -211,5 +247,9 @@
     opacity: 0.5;
     width: 30%;
     content: "";
+
+    @media only screen and (min-width: 767px) {
+      width: 0;
+    }
   }
 }
