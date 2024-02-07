@@ -1,0 +1,25 @@
+@import "variables";
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    .loader {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 4px solid $border-color;
+        border-top-color: $font-light;
+        animation: spin 1s linear infinite;
+    }
+      
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+}
