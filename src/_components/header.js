@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import topics from '/src/api/topics.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft, faMagnifyingGlass, faMicrophone, faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faMagnifyingGlass, faMicrophone, faEllipsisVertical, faFilm, faClockRotateLeft, faHome, faUser, faShop, faMusic, faTowerBroadcast, faGamepad, faNewspaper, faBaseball, faGraduationCap, faShirt, faPodcast, faGear, faFlag, faQuestion, faCommentDots, faSquarePlus, faBell, faChartSimple } from "@fortawesome/free-solid-svg-icons"
 import { faCircleUser, faCompass } from "@fortawesome/free-regular-svg-icons"
 import { useState, useEffect } from "react"
 import Link from 'next/link'
@@ -134,47 +134,47 @@ function SideNavigation(props){
             {
                 heading     : null,
                 listItems   : [
-                    {icon  : faCompass, label : "Home"},
-                    {icon  : faCompass, label : "Shorts"},
-                    {icon  : faCompass, label : "Subscriptions"}
+                    {icon  : faHome, label : "Home"},
+                    {icon  : faFilm, label : "Shorts"},
+                    {icon  : faBell, label : "Subscriptions"}
                 ]
             },
             {
                 heading     : null,
                 listItems   : [
-                    {icon  : faCompass, label : "You"},
-                    {icon  : faCompass, label : "History"}
+                    {icon  : faUser, label : "You"},
+                    {icon  : faClockRotateLeft, label : "History"}
                 ]
             },
             {
                 heading     : "Explore",
                 listItems   : [
-                    {icon  : faCompass, label : "Trending"},
-                    {icon  : faCompass, label : "Shopping"},
-                    {icon  : faCompass, label : "Music"},
-                    {icon  : faCompass, label : "Films"},
-                    {icon  : faCompass, label : "Live"},
-                    {icon  : faCompass, label : "Gaming"},
-                    {icon  : faCompass, label : "News"},
-                    {icon  : faCompass, label : "Sport"},
-                    {icon  : faCompass, label : "Learning"},
-                    {icon  : faCompass, label : "Fashion & beauty"},
-                    {icon  : faCompass, label : "Podcasts"}
+                    {icon  : faChartSimple, label : "Trending"},
+                    {icon  : faShop, label : "Shopping"},
+                    {icon  : faMusic, label : "Music"},
+                    {icon  : faFilm, label : "Films"},
+                    {icon  : faTowerBroadcast, label : "Live"},
+                    {icon  : faGamepad, label : "Gaming"},
+                    {icon  : faNewspaper, label : "News"},
+                    {icon  : faBaseball, label : "Sport"},
+                    {icon  : faGraduationCap, label : "Learning"},
+                    {icon  : faShirt, label : "Fashion & beauty"},
+                    {icon  : faPodcast, label : "Podcasts"}
                 ]
             },
             {
                 heading     : null,
                 listItems   : [
-                    {icon  : faCompass, label : "Browse channels"}
+                    {icon  : faSquarePlus, label : "Browse channels"}
                 ]
             },
             {
                 heading     : null,
                 listItems   : [
-                    {icon  : faCompass, label : "Settings"},
-                    {icon  : faCompass, label : "Report history"},
-                    {icon  : faCompass, label : "Help"},
-                    {icon  : faCompass, label : "Send feedback"}
+                    {icon  : faGear, label : "Settings"},
+                    {icon  : faFlag, label : "Report history"},
+                    {icon  : faQuestion, label : "Help"},
+                    {icon  : faCommentDots, label : "Send feedback"}
                 ]
             }
         ];
