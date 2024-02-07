@@ -35,11 +35,21 @@
 
     border-bottom: 1px solid $border-color;
 
+    @media only screen and (min-width: 767px) {
+      width: calc(100% - 220px);
+      margin-left: 220px;
+      border-bottom: none;
+    }
+
 
     .logo {
       height: 20px;
       width: auto;
       margin: 12px 15px;
+
+      @media only screen and (min-width: 767px) {
+        display: none;
+      }
     }
 
     .right-side {
@@ -114,7 +124,9 @@
     border-bottom: 1px solid $border-color;
 
     @media only screen and (min-width: 767px) {
+      width: calc(100% - 244px);
       margin-left: 220px;
+      border-bottom: none;
     }
 
     .menu-icon {
@@ -143,6 +155,7 @@
       margin-left: 10px;
       border-radius: 8px;
       vertical-align: middle;
+      text-wrap: nowrap;
 
       &.active {
         background-color: $theme-color !important;
@@ -171,8 +184,6 @@
   @media only screen and (min-width: 767px) {
     left: 0;
     width: 220px;
-    margin-top: 50px;
-    height: calc(100vh - 50px);
   }
 
 
@@ -205,10 +216,6 @@
       width: auto;
       margin: 15px 25px;
       margin-top: 30px;
-
-      @media only screen and (min-width: 767px) {
-        display: none;
-      }
     }
   
     .nav-items-group {

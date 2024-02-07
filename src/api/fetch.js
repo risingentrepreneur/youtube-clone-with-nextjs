@@ -1,4 +1,4 @@
-export async function getVideosList(videoCategoryId = "", maxResults = 50) {
+export async function getVideosList(videoCategoryId = "", maxResults = 48) {
 
     //use this to make url request unique always so that it can fetch new responses
     let randomNumber        = Math.floor(Math.random() * 1000000);
