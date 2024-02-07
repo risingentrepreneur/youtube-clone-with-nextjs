@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import topics from '/src/api/topics.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft, faMagnifyingGlass, faMicrophone } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faMagnifyingGlass, faMicrophone, faEllipsisVertical } from "@fortawesome/free-solid-svg-icons"
 import { faCircleUser, faCompass } from "@fortawesome/free-regular-svg-icons"
 import { useState, useEffect } from "react"
 import Link from 'next/link'
@@ -64,6 +64,23 @@ function ShowSearchBar({ setShowSearch }){
                     className = "logo"
                     />
                 </Link>
+            </div>
+            <div className='desktop-view'>
+                <div className='search-bar'>
+                    <input type = 'text' placeholder='Search YouTube' />
+                    <div className='button'>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' />
+                    </div>
+                </div>
+                <div className='microphone'>
+                    <FontAwesomeIcon icon={faMicrophone} className='icon' />
+                </div>
+                <div className='menu-icon'>
+                    <FontAwesomeIcon icon={faEllipsisVertical} className='icon'  />
+                </div>
+                <div className='sign-in-button'>
+                    <FontAwesomeIcon icon={faCircleUser} className='icon'/> &nbsp; Sign in
+                </div>
             </div>
             <div className = "right-side">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='icon' onClick={ () => setShowSearch(true) } />
