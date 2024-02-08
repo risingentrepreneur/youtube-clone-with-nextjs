@@ -234,6 +234,7 @@
       border-radius: 8px;
       vertical-align: middle;
       text-wrap: nowrap;
+      white-space: nowrap;
 
       &.active {
         background-color: $theme-color !important;
