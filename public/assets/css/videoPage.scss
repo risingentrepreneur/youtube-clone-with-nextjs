@@ -43,8 +43,12 @@
   padding: 0 20px;
 
   @media only screen and (min-width: 767px) {
-    width: calc(100% - 580px);
+    width: calc(100% - 600px);
     margin-left: 220px;
+    background-color: $secondary-color;
+    padding: 5px 20px;
+    margin-top: 20px;
+    border-radius: 20px;
   }
 
   .title {
@@ -60,6 +64,10 @@
     padding-top: 8px;
     overflow: hidden;
 
+    @media only screen and (min-width: 767px) {
+      background-color: $secondary-color;
+    }
+
     &.hidden {
       height: 0;
     }
@@ -74,6 +82,10 @@
     font-weight: 300;
     display: flex; 
     align-items: center;
+
+    @media only screen and (min-width: 767px) {
+      padding-bottom: 10px;
+    }
 
     .divider {
       width: 4px;
