@@ -1,9 +1,9 @@
 "use client"
 import { useParams } from 'next/navigation';
 import YouTube from "react-youtube";
-import { durationToHHMMSS, parseHTMLtags, timePassedFromISO, viewsInMK } from '@/_utils/utils';
-import DOMPurify from "dompurify";
-import { useEffect, useState } from 'react';
+import { parseHTMLtags, timePassedFromISO, viewsInMK } from '@/_utils/utils';
+import DOMPurify from "isomorphic-dompurify";
+import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsUp, faThumbsDown, faFlag } from "@fortawesome/free-regular-svg-icons";
