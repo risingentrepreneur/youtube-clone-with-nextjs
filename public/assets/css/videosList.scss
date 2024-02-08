@@ -11,6 +11,9 @@
 
 .list-on-video-page {
   width: 100%;
+
+  @include hide-scroll-bar;
+  
   @media only screen and (min-width: 767px) {
     width: 320px;
     height: calc(100% - 80px);

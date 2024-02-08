@@ -260,6 +260,8 @@
   display: flex;
   scroll-behavior: smooth;
 
+  @include hide-scroll-bar;
+
   @media only screen and (min-width: 767px) {
     left: 0;
     width: 220px;
@@ -285,6 +287,8 @@
     width: 70%;
     background-color: $primary-color;
     overflow-y: scroll;
+
+    @include hide-scroll-bar;
     
     @media only screen and (min-width: 767px) {
       width: 100%;

@@ -2,13 +2,18 @@
 @import "font";
 @import "variables";
 
+
+html {
+  overflow: -moz-scrollbars-none;
+  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
 body {
   background-color: $primary-color;
   color: $theme-color;
   margin: 0;
-  
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: 0;
 }
 
 ::-webkit-scrollbar {

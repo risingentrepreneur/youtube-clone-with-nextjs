@@ -8,3 +8,13 @@ $border-color : #e4e4e421;
 
 $font-light : #fff;
 $link-color : #6bb7ff;
+
+
+@mixin hide-scroll-bar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari and Opera */
+    }
+}
