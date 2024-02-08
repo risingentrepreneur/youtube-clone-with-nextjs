@@ -6,15 +6,25 @@
 }
 
 .youtube-player {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 400;
+    
+    @media only screen and (max-width: 767px) {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 400;
+    }
+
     .iframe-player {
       position: relative;
       overflow: hidden;
       width: 100%;
       padding-top: 56.25%;
+
+      @media only screen and (min-width: 767px) {
+        width: calc(100% - 550px);
+        padding-top: 35%;
+        margin-left: 220px;
+      }
     
       iframe {
         position: absolute;
@@ -31,6 +41,11 @@
 .video-description {
   width: calc(100% - 40px);
   padding: 0 20px;
+
+  @media only screen and (min-width: 767px) {
+    width: calc(100% - 580px);
+    margin-left: 220px;
+  }
 
   .title {
     font-size: 18px;
@@ -59,7 +74,7 @@
     font-weight: 300;
     display: flex; 
     align-items: center;
-    
+
     .divider {
       width: 4px;
       height: 4px;
@@ -106,6 +121,11 @@
   padding: 12px 15px;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (min-width: 767px) {
+    width: calc(100% - 580px);
+    margin-left: 220px;
+  }
 
   .left {
     display: flex;
@@ -160,6 +180,11 @@
   overflow: scroll;
   white-space: nowrap;
   position: relative;
+
+  @media only screen and (min-width: 767px) {
+    width: calc(100% - 580px);
+    margin-left: 220px;
+  }
 
   .tag {
     display: flex;
