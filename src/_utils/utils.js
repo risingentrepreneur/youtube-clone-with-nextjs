@@ -74,7 +74,7 @@ export function parseHTMLtags(string){
     //return string.replace(Rexp, `<a href='$1'>$1</a>`);
 
     return string.replace(/(https?:\/\/[^\s]+)/g, (url) => {
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+        return `<a href="${url}" class="link-color" target="_blank" rel="noopener noreferrer">${url}</a>`;
     });
 
 }
