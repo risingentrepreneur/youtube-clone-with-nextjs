@@ -9,7 +9,7 @@ export async function getVideosList(videoCategoryId = "", maxResults = 48) {
     let searchYoutubeURL = `https://www.googleapis.com/youtube/v3/search?maxResults=20&type=video&order=date&part=snippet&key=${ process.env.YOUTUBE_API_KEY }`;
     let youtubeChannelURL = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCpwix-O6ceqMgdxhqIynzFA&key=${ process.env.YOUTUBE_API_KEY }`;
     console.log(mostPopularVideos);
-    const res = await fetch(mostPopularVideos)
+    const res = await fetch(mostPopularVideos, { next: { revalidate: 10 } })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
    
@@ -28,7 +28,7 @@ export async function getChannelDetails(channelID) {
 
   let youtubeChannelURL = `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${ channelID }&key=${ process.env.YOUTUBE_API_KEY }`;
 
-  const res = await fetch(youtubeChannelURL)
+  const res = await fetch(youtubeChannelURL, { next: { revalidate: 10 } })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
   
@@ -47,7 +47,7 @@ export async function getChannelDetails(channelID) {
 
 export async function getVideoDetails(videoID) {
   const url   = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoID}&key=${ process.env.YOUTUBE_API_KEY }`;
-  const res = await fetch(url)
+  const res = await fetch(url, { next: { revalidate: 10 } })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
