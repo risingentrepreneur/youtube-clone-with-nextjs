@@ -4,6 +4,7 @@
 .list-on-home-page {
   width: 100%;
   @media only screen and (min-width: 767px) {
+    width: calc(100% - 250px);
     margin-left: 240px;
     margin-top: 20px;
   }
@@ -33,11 +34,10 @@
   width: 100%;
 
   @media only screen and (min-width: 767px) {
-    width: calc(100% - 250px);
     min-width: 310px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .video-card {
@@ -45,7 +45,7 @@
     margin-bottom: 14px;
 
     @media only screen and (min-width: 767px) {
-      width: 32%;
+      width: 32.5%;
       min-width: 310px;
     }
   
@@ -60,6 +60,10 @@
 
       @media only screen and (min-width: 767px) {
         border-radius: 16px;
+        transition: 300ms;
+        &:hover {
+          border-radius: 0;
+        }
       }
   
       .duration {
