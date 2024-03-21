@@ -1,10 +1,9 @@
 export async function getVideosList(videoCategoryId = "", maxResults = 48) {
 
     //use this to make url request unique always so that it can fetch new responses
-    let randomNumber        = Math.floor(Math.random() * 1000000);
     videoCategoryId         = (videoCategoryId == "") ? "" : `&videoCategoryId=${videoCategoryId}`;
     
-    let mostPopularVideos   = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=${maxResults}${videoCategoryId}&regionCode=IN&key=${ process.env.YOUTUBE_API_KEY }&random=${randomNumber}`;
+    let mostPopularVideos   = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=${maxResults}${videoCategoryId}&regionCode=IN&key=${ process.env.YOUTUBE_API_KEY }`;
     let ajaxURL         = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,statistics&maxResults=50&playlistId=RDCMUCNJcSUSzUeFm8W9P7UUlSeQ&key=${ process.env.YOUTUBE_API_KEY }`;
     let searchYoutubeURL = `https://www.googleapis.com/youtube/v3/search?maxResults=20&type=video&order=date&part=snippet&key=${ process.env.YOUTUBE_API_KEY }`;
     let youtubeChannelURL = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCpwix-O6ceqMgdxhqIynzFA&key=${ process.env.YOUTUBE_API_KEY }`;
