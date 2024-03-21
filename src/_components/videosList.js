@@ -1,4 +1,5 @@
-
+import youtubeFeedLocalJSON from "@/api/youtubefeed.json"
+import channelsListLocalJSON from "@/api/channelsList.json"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { getVideosList, getChannelDetails } from "@/api/fetch";
